@@ -34,9 +34,9 @@ class Dashboard extends React.Component {
   constructor(props) {
     super(props);
     // alert("hello");
-    if (localStorage.getItem("userData") === null) {
-     
-    }
+    // if (localStorage.getItem("userData") === null) {
+    //   <Redirect from="/" to="./layouts/SignInSide" />
+    // }
   }
 
   render() {

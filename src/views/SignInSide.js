@@ -162,9 +162,9 @@ export default function SignInSide(props) {
           localStorage.setItem("userData", JSON.stringify(responseJson));
           // alert("hello");
           // <switch>
-          // props.history.push("../admin/dashboard");
-          window.location.href = "../layouts/Admin";
-          // </switch>
+          
+          // <Redirect from="/"  to="/admin/dashboard" />
+          //  </switch>
         } else {
           setError("email and password missmatch");
         }

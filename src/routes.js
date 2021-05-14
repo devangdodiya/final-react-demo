@@ -51,7 +51,7 @@ var routes = [
   },
   {
     path: "/Logout",
-    name: "Notifications",
+    name: "Logout",
     icon: "nc-icon nc-button-power",
     component: Logout,
     layout: "/admin",

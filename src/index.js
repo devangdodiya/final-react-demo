@@ -37,11 +37,11 @@ ReactDOM.render(
     <Switch>
     {/* <Route path="/admin" render={(props) => <SignInSide {...props} />} />
       <Redirect to="/login" /> */}
-      <Route path="/" render={(props) => <SignInSide {...props} />} />
-    <Route path="./admin" render={(props) => <Dashboard {...props} />} />
+      {/* <Route path="/" render={(props) => <SignInSide {...props} />} /> */}
+    <Route path="/" render={(props) => <Dashboard {...props} />} />
       
-    <Redirect from="/" to="./SignInSide" />
-    <Redirect  to="./layouts/Admin" />
+    <Redirect from="/" to="./layouts/Admin" />
+    {/* <Redirect  to="./layouts/Admin" /> */}
 {/* 
       <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
       <Redirect to="/admin/dashboard" /> */}
