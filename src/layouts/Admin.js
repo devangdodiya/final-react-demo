@@ -19,7 +19,7 @@
 import React from "react";
 // javascript plugin used to create scrollbars on windows
 import PerfectScrollbar from "perfect-scrollbar";
-import { Route, Switch,Redirect } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import Footer from "components/Footer/Footer.js";
@@ -30,47 +30,39 @@ import routes from "routes.js";
 
 var ps;
 
-class Dashboard extends React.Component {
+function Dashboard(props) {
+  const mainPanel = React.useRef(null);
+  if (localStorage.getItem("userData") === null) {
+    //...
+    window.location.assign("/auth/Login");
+  }
 
-  render() {
-    // function checkloll()
-    // {
-     
-    // }
-    return (
-      <div className="wrapper">
-    
-        <Sidebar
-          {...this.props}
-          routes={routes}
-          bgColor="grey"
-          activeColor="info"
-        />
-        <div className="main-panel" ref={this.mainPanel}>
-          <DemoNavbar {...this.props} />
-          <Switch>
-            {
-              routes.map((prop, key) => {
-              return (
-                <Route
-                  path={prop.layout + prop.path}
-                  component={prop.component}
-                  key={key}
-                />
-              );
-            })}
-          </Switch>
-          <Footer fluid />
-        </div>
-        {/* <FixedPlugin
+  return (
+    <div className="wrapper">
+      <Sidebar {...props} routes={routes} bgColor="grey" activeColor="info" />
+      <div className="main-panel" ref={mainPanel}>
+        <DemoNavbar {...props} />
+        <Switch>
+          {routes.map((prop, key) => {
+            return (
+              <Route
+                path={prop.layout + prop.path}
+                component={prop.component}
+                key={key}
+              />
+            );
+          })}
+        </Switch>
+        <Footer fluid />
+      </div>
+      {/* <FixedPlugin
           bgColor={this.state.backgroundColor}
           activeColor={this.state.activeColor}
           handleActiveClick={this.handleActiveClick}
           handleBgClick={this.handleBgClick}
         /> */}
-      </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default Dashboard;
