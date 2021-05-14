@@ -5,13 +5,8 @@ import { Redirect, Route, Switch,useHistory } from "react-router-dom";
 function Logout()
 {
     const history = useHistory();
-    
-    
     return(
-       
         <div>
- 
-
             <switch>{ window.localStorage.clear()}
             
             <Redirect from="/"  to="/auth/Login" />

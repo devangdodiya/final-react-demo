@@ -33,7 +33,7 @@ var ps;
 function Dashboard(props) {
   const mainPanel = React.useRef(null);
   if (localStorage.getItem("userData") === null) {
-    //...
+    
     window.location.assign("/auth/Login");
   }
 
