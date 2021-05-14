@@ -19,13 +19,13 @@
 import React from "react";
 // javascript plugin used to create scrollbars on windows
 import PerfectScrollbar from "perfect-scrollbar";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch,Redirect } from "react-router-dom";
 
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import Footer from "components/Footer/Footer.js";
 import Sidebar from "components/Sidebar/Sidebar.js";
 import FixedPlugin from "components/FixedPlugin/FixedPlugin.js";
-
+// import { Redirect, Route, Switch,useHistory } from "react-router-dom";
 import routes from "routes.js";
 
 var ps;
@@ -33,8 +33,13 @@ var ps;
 class Dashboard extends React.Component {
 
   render() {
+    // function checkloll()
+    // {
+     
+    // }
     return (
       <div className="wrapper">
+    
         <Sidebar
           {...this.props}
           routes={routes}

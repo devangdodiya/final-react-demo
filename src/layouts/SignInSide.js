@@ -12,9 +12,10 @@ import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
-import AdminLayout from "layouts/Admin.js";
-import { Switch, Redirect,Route } from "react-router-dom";
-
+// import AdminLayout from "layouts/Admin.js";
+import { Switch, Redirect, Route } from "react-router-dom";
+import AdminLayout from "layouts/Admin";
+// import AdminLayout from "./Admin";
 
 function Copyright() {
   return (
@@ -112,10 +113,7 @@ export default function SignInSide(props) {
               }}
               autoComplete="current-password"
             />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            />
+
             <Button
               type="submit"
               fullWidth
@@ -126,18 +124,7 @@ export default function SignInSide(props) {
             >
               Sign In
             </Button>
-            <Grid container>
-              <Grid item xs>
-                <Link href="#" variant="body2">
-                  Forgot password?
-                </Link>
-              </Grid>
-              <Grid item>
-                <Link href="#" variant="body2">
-                  {"Don't have an account? Sign Up"}
-                </Link>
-              </Grid>
-            </Grid>
+
             <Box mt={5}>
               <Copyright />
             </Box>
@@ -148,27 +135,17 @@ export default function SignInSide(props) {
   );
 
   function logincheck() {
-    // props.history.push("/Mydashboard");
-    // console.log(Email);
-    // console.log(Password);
     const formData = new FormData();
     formData.append("email", Email);
     formData.append("password", Password);
     axios
       .post("http://localhost/react/demo/login.php", formData)
       .then((respon) => {
-        // setError(respon.data);
         let responseJson = respon;
         if (respon.data == 1) {
-          // sessionStorage.setItem('userData',JSON.stringify(responseJson));
           localStorage.setItem("userData", JSON.stringify(responseJson));
-         alert("hello");
-         <Switch>
- 
-          {/* <Route path="/admin" render={(props) => <Dashboard {...props} />} /> */}
-            <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
-            <Redirect to="/admin/dashboard" />
-          </Switch>
+          window.location.assign("/admin/Dashboard");
+         
         } else {
           setError("email and password missmatch");
         }

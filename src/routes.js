@@ -56,13 +56,13 @@ var routes = [
     component: Logout,
     layout: "/admin",
   },
-  {
-    path: "/Login",
-    name: "Login",
-    icon: "nc-icon nc-single-02",
-    component: Login,
-    layout: "/auth",
-  },
+  // {
+  //   path: "/Login",
+  //   name: "Login",
+  //   icon: "nc-icon nc-single-02",
+  //   component: Login,
+  //   layout: "/auth",
+  // },
   // {
   //   path: "/user-page",
   //   name: "User Profile",

@@ -162,12 +162,15 @@ export default function SignInSide(props) {
         if (respon.data == 1) {
           // sessionStorage.setItem('userData',JSON.stringify(responseJson));
           localStorage.setItem("userData", JSON.stringify(responseJson));
-         alert("hello");
+       
          <Switch>
  
           {/* <Route path="/admin" render={(props) => <Dashboard {...props} />} /> */}
+            {/* <Route path="/admin" render={(props) => <AdminLayout {...props} />} /> */}
+            {/* <Redirect from="/"  to="/admin/Dashboard" /> */}
             <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
-            <Redirect to="/admin/dashboard" />
+            <Redirect from="/"  to="/admin/Dashboard" />
+                <Route path="/admin/Dashboard" component={AdminLayout} />
           </Switch>
         } else {
           setError("email and password missmatch");

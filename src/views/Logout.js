@@ -13,6 +13,7 @@ function Logout()
  
 
             <switch>{ window.localStorage.clear()}
+            
             <Redirect from="/"  to="/auth/Login" />
                 <Route path="/auth/Login" component={SignInSide} />
             </switch>
