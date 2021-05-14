@@ -31,13 +31,6 @@ import routes from "routes.js";
 var ps;
 
 class Dashboard extends React.Component {
-  constructor(props) {
-    super(props);
-    // alert("hello");
-    // if (localStorage.getItem("userData") === null) {
-    //   <Redirect from="/" to="./layouts/SignInSide" />
-    // }
-  }
 
   render() {
     return (
@@ -51,10 +44,10 @@ class Dashboard extends React.Component {
         <div className="main-panel" ref={this.mainPanel}>
           <DemoNavbar {...this.props} />
           <Switch>
-            {routes.map((prop, key) => {
+            {
+              routes.map((prop, key) => {
               return (
                 <Route
-                
                   path={prop.layout + prop.path}
                   component={prop.component}
                   key={key}

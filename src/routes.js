@@ -61,7 +61,7 @@ var routes = [
     name: "Login",
     icon: "nc-icon nc-single-02",
     component: Login,
-    layout: "/admin",
+    layout: "/auth",
   },
   // {
   //   path: "/user-page",

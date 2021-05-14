@@ -18,6 +18,8 @@
 */
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Redirect, Route, Switch,useHistory } from "react-router-dom";
+import SignInSide from './SignInSide'
 // reactstrap components
 import {
   Card,
@@ -107,7 +109,19 @@ function Tables() {
 
   return (
     <>
+      {/* {localStorage.getItem("userData") === null ? <switch>
+            <Redirect from="/"  to="/admin/Login" />
+                <Route path="/admin/Login" component={SignInSide} />
+            </switch> 
+            : <switch>
+            <Redirect from="/"  to="/admin/tables" />
+                <Route path="/admin/tables" component={Tables} />
+            </switch> 
+            } */}
+
+
       <div className="content">
+      
         <Row>
           <Col md="8">
             <Card>

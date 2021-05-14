@@ -1,5 +1,6 @@
 import React from 'react'
 import Dashboard from './Dashboard'
+import SignInSide from './SignInSide'
 import { Redirect, Route, Switch,useHistory } from "react-router-dom";
 function Logout()
 {
@@ -9,12 +10,12 @@ function Logout()
     return(
        
         <div>
-       {history.push("./SignInSide")}
+ 
 
-            {/* <switch>{ window.localStorage.clear()}
-            <Redirect from="/"  to="/admin/dashboard" />
-                <Route path="/admin/dashboard" component={Dashboard} />
-            </switch> */}
+            <switch>{ window.localStorage.clear()}
+            <Redirect from="/"  to="/auth/Login" />
+                <Route path="/auth/Login" component={SignInSide} />
+            </switch>
         </div>        
        
        

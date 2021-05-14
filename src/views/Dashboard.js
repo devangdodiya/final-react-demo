@@ -19,6 +19,8 @@
 import React from "react";
 // react plugin used to create charts
 import { Line, Pie } from "react-chartjs-2";
+import { Redirect, Route, Switch,useHistory } from "react-router-dom";
+import SignInSide from './SignInSide'
 // reactstrap components
 import {
   Card,
@@ -44,7 +46,7 @@ function Dashboard(props){
    
     return (
       <>
-      
+            
         <div className="content">
           <Row>
             <Col lg="3" md="6" sm="6">
